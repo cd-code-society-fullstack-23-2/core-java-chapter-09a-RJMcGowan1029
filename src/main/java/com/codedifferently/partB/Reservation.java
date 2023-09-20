@@ -26,4 +26,8 @@ public class Reservation {
         return amount;
     }
 
+    public Boolean paymentStatus() throws PaymentFailureException{
+       return null;
+    }
+
 }

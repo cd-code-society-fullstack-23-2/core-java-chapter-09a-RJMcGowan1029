@@ -41,12 +41,21 @@ public class Main {
                     displaySeats(reservationSystem);
                     break;
                 case 3:
+                    System.out.println("Please select an available seat");
                     int option = scanner.nextInt();
                     try {
                         reservationSystem.bookSeat(option);
                     }
                     catch (OverlappingReservationException e){
-                        System.out.println("Someone there already");
+                        System.out.println("Im pretty sure i said available🤨");
+                    }
+                    try {
+                        reservation.amountPaid(50.0);
+                        System.out.println("Payment Successful");
+                    }
+                    catch (PaymentFailureException e){
+                        System.out.println("Broke Ahh");
+                        System.exit(1);
                     }
                     break;
 
@@ -60,13 +69,13 @@ public class Main {
 
 
 
-        try{
-            reservation.amountPaid(50.00);
-            System.out.println("Payment was successful \nEnjoy ur flight :)");
-        }
-        catch (PaymentFailureException e){
-            System.out.println("Get ya money up broke boy");
-        }
+//        try{
+//            reservation.amountPaid(50.00);
+//            System.out.println("Payment was successful \nEnjoy ur flight :)");
+//        }
+//        catch (PaymentFailureException e){
+//            System.out.println("Get ya money up broke boy");
+//        }
     }
 
     public static void main(String[] args) {
